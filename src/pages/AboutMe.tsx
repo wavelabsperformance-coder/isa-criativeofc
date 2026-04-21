@@ -2,7 +2,8 @@ import { MessageCircle, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
 
-const WHATSAPP_URL = "https://wa.me/?text=Hello%2C%20I%27d%20like%20to%20start%20a%20project.";
+const WHATSAPP_URL =
+  "https://wa.me/5582998274831";
 const LINKEDIN_URL = "https://www.linkedin.com/in/isabelle-carvalho/";
 
 const softwareTools = [
@@ -10,33 +11,35 @@ const softwareTools = [
   { name: "Premiere Pro", logo: "/images/software/premiere.jpg", desc: "Video Editing" },
   { name: "Photoshop", logo: "/images/software/photoshop.jpg", desc: "Image Editing" },
   { name: "Illustrator", logo: "/images/software/illustrator.jpg", desc: "Vector Design" },
-  { name: "Cinema 4D", logo: "/images/software/cinema4d.jpg", desc: "3D Modeling" },
-  { name: "Blender", logo: "/images/software/blender.jpg", desc: "3D & Animation" },
-  { name: "DaVinci Resolve", logo: "/images/software/davinci.jpg", desc: "Color Grading" },
 ];
 
 const AboutMe = () => (
   <div className="relative z-10 pt-24 pb-24 md:pt-32 md:pb-32">
     <div className="container mx-auto px-4">
       <div className="grid items-start gap-12 md:grid-cols-2 md:gap-16">
-        {/* Photo Card */}
+        
+        {/* PHOTO */}
         <AnimatedSection>
-          <div className="aspect-[4/5] overflow-hidden rounded-sm bg-secondary">
+          <div className="aspect-[7/10] overflow-hidden rounded-sm bg-secondary">
             <img
               src="/images/isa.jpg"
               alt="Isa — Creative Editor and Animator"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-center"
               loading="lazy"
             />
           </div>
         </AnimatedSection>
 
-        {/* Bio */}
+        {/* BIO */}
         <AnimatedSection delay={0.2}>
-          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4">About Me</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4">
+            About Me
+          </p>
+
           <h1 className="font-display text-4xl font-bold md:text-5xl mb-6">
             Hi there! I'm <span className="text-gradient">Isa.</span>
           </h1>
+
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               A video editor specializing in visual effects and animation. I create high-impact visual content for marketing campaigns, music videos, YouTube channels and social media.
@@ -47,12 +50,17 @@ const AboutMe = () => (
             <p>
               I've had the privilege of working with leading brands and talented creators worldwide, helping them communicate their stories through compelling visuals.
             </p>
-            <p className="text-foreground font-medium">Let's collaborate on your next project.</p>
+            <p className="text-foreground font-medium">
+              Let's collaborate on your next project.
+            </p>
           </div>
 
-          {/* Software Tools */}
+          {/* TOOLS */}
           <div className="mt-10">
-            <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-6">Tools & Software</p>
+            <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-6">
+              Tools & Software
+            </p>
+
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
               {softwareTools.map((tool) => (
                 <div
@@ -67,9 +75,14 @@ const AboutMe = () => (
                       loading="lazy"
                     />
                   </div>
+
                   <div>
-                    <p className="text-sm font-semibold leading-tight">{tool.name}</p>
-                    <p className="text-xs text-muted-foreground leading-tight">{tool.desc}</p>
+                    <p className="text-sm font-semibold leading-tight">
+                      {tool.name}
+                    </p>
+                    <p className="text-xs text-muted-foreground leading-tight">
+                      {tool.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -80,9 +93,11 @@ const AboutMe = () => (
           <div className="mt-10 flex items-center gap-3">
             <Button asChild className="gap-2">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="h-4 w-4" /> Get in Touch
+                <MessageCircle className="h-4 w-4" />
+                Get in Touch
               </a>
             </Button>
+
             <a
               href={LINKEDIN_URL}
               target="_blank"

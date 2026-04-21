@@ -6,8 +6,8 @@ const BrandPortfolio = () => (
   <div className="relative z-10 pt-24 pb-24 md:pt-32 md:pb-32">
     <div className="container mx-auto px-4">
       <AnimatedSection>
-        <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-2">Clients</p>
-        <h1 className="font-display text-4xl font-bold md:text-5xl mb-4">Brand Portfolio</h1>
+     
+        <h1 className="font-display text-4xl font-bold md:text-5xl mb-4">Social Media</h1>
         <p className="text-muted-foreground max-w-xl mb-12">
           Creative work delivered for leading brands across multiple industries.
         </p>

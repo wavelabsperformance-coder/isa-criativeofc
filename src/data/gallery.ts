@@ -1,21 +1,41 @@
 export interface GalleryItem {
   id: string;
-  src: string;
+  video: string;
+  poster?: string;
   alt: string;
-  link?: string;
+  description?: string;
 }
 
 export const galleryItems: GalleryItem[] = [
-  { id: "g1", src: "/images/gallery-01.jpg", alt: "Creative edit showcase 1" },
-  { id: "g2", src: "/images/gallery-02.jpg", alt: "VFX composition" },
-  { id: "g3", src: "/images/gallery-03.jpg", alt: "Motion design frame" },
-  { id: "g4", src: "/images/gallery-04.jpg", alt: "Color grading work" },
-  { id: "g5", src: "/images/gallery-05.jpg", alt: "Animation still" },
-  { id: "g6", src: "/images/gallery-06.jpg", alt: "Campaign visual" },
-  { id: "g7", src: "/images/gallery-07.jpg", alt: "Social media content" },
-  { id: "g8", src: "/images/gallery-08.jpg", alt: "Product animation" },
-  { id: "g9", src: "/images/gallery-09.jpg", alt: "Typography motion" },
-  { id: "g10", src: "/images/gallery-10.jpg", alt: "Brand identity motion" },
-  { id: "g11", src: "/images/gallery-11.jpg", alt: "Experimental VFX" },
-  { id: "g12", src: "/images/gallery-12.jpg", alt: "Cinematic grade" },
+  // CLUB
+  { id: "g1", video: "/videos/club/video-01.mp4", alt: "Video 1", description: "ARNIE - SPRINGBREAK" },
+  { id: "g2", video: "/videos/club/video-05.mp4", alt: "Video 5", description: "DAER W/ NIC LOVE ISLAND HOST PARTY" },
+  { id: "g3", video: "/videos/club/video-10.mp4", alt: "Video 10", description: "ZMM EVENTS COLLEGE TOUR 2025" },
+  { id: "g15", video: "/videos/club/video-15.mp4", alt: "Video 15", description: "SIGMA CHI FSU NOIZU 2024" },
+
+  // WEDDING
+  { id: "g4", video: "/videos/wedding/video-01.mp4", alt: "Wedding 1", description: "OPULENCE WEDDING FOUR SEASONS" },
+  { id: "g5", video: "/videos/wedding/video-03.mp4", alt: "Wedding 3", description: "CERIMÔNIA GABRIEL E GABRIELA" },
+
+  // SPONSORS
+  { id: "g6", video: "/videos/sponsors/video-01.mp4", alt: "Sponsors 1", description: "WPB 123 W/ STRYDE RUN CLUB" },
+  { id: "g7", video: "/videos/sponsors/video-03.mp4", alt: "Sponsors 3", description: "MAGIC MIND" },
+
+  // FOOD
+  { id: "g8", video: "/videos/food/video-01.mp4", alt: "Food 1", description: "AKIRA BACK BRUNCH SHOOT 2024 - PART 1" },
+
+  // MOTION
+  { id: "g9", video: "/videos/motion/video-01.mp4", alt: "Motion 1", description: "MOTION VOL1" },
+
+  // VFX
+  { id: "g10", video: "/videos/vfx/video-02.mp4", alt: "VFX 2", description: "VFX VOL2" },
+
+  // SOCIAL / CREATIVE
+  
+  { id: "g11", video: "/videos/criative/video-01.mp4", alt: "criative 1", description: "THE CARTER COLLECTIVE" },
+  { id: "g12", video: "/videos/criative/video-05.mp4", alt: "criative 5", description: "VICK - VAPORUB IN THE COLD" },
+  { id: "g13", video: "/videos/criative/video-07.mp4", alt: "criative 8", description: "ALWAYS" },
+
+  // TRAVEL
+  { id: "g14", video: "/videos/travel/video-01.mp4", alt: "Travel 1", description: "SPAIN TRIP SUMMER 2023" },
 ];

@@ -10,7 +10,7 @@ const Portfolio = () => (
         <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-2">Portfolio</p>
         <h1 className="font-display text-4xl font-bold md:text-5xl mb-4">Selected Work</h1>
         <p className="text-muted-foreground max-w-xl mb-12">
-          A curated collection of projects spanning motion graphics, VFX, animation and video editing.
+          A curated collection of projects video editing, spanning motion graphics, VFX, and animation.
         </p>
       </AnimatedSection>
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

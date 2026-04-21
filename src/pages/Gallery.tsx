@@ -1,45 +1,72 @@
+import { useState } from "react";
 import AnimatedSection from "@/components/AnimatedSection";
+import Lightbox from "@/components/Lightbox";
+import VideoPreview from "@/components/VideoPreview";
 import { galleryItems } from "@/data/gallery";
 
-const Gallery = () => (
-  <div className="relative z-10 pt-24 pb-24 md:pt-32 md:pb-32">
-    <div className="container mx-auto px-4">
-      <AnimatedSection>
-        <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-2">Gallery</p>
-        <h1 className="font-display text-4xl font-bold md:text-5xl mb-4">Visual Showcase</h1>
-        <p className="text-muted-foreground max-w-xl mb-12">
-          A quick look at selected frames, stills and creative work.
-        </p>
-      </AnimatedSection>
-      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
-        {galleryItems.map((item, i) => (
-          <AnimatedSection key={item.id} delay={i * 0.05}>
-            <div className="mb-4 break-inside-avoid">
-              {item.link ? (
-                <a href={item.link} target="_blank" rel="noopener noreferrer" className="group block overflow-hidden rounded-sm">
-                  <img
-                    src={item.src}
+const Gallery = () => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  // ✅ AGORA PASSANDO DESCRIPTION PRO LIGHTBOX
+  const lightboxItems = galleryItems.map((item) => ({
+    src: item.video ?? "",
+    alt: item.alt,
+    description: item.description, // 👈 ESSENCIAL
+    video: item.video,
+  }));
+
+  return (
+    <div className="relative z-10 pt-24 pb-24">
+      <div className="container mx-auto px-4">
+
+        <h1 className="text-4xl font-bold mb-10">Gallery</h1>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {galleryItems.map((item, i) => (
+            <AnimatedSection key={i} delay={i * 0.05}>
+              
+              <div className="flex flex-col">
+
+                <div
+                  className="overflow-hidden rounded-sm bg-secondary cursor-pointer"
+                  onClick={() => {
+                    setLightboxIndex(i);
+                    setLightboxOpen(true);
+                  }}
+                >
+                  <VideoPreview
+                    video={item.video}
+                    poster={item.video}
                     alt={item.alt}
-                    className="w-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
-                    loading="lazy"
-                  />
-                </a>
-              ) : (
-                <div className="group overflow-hidden rounded-sm">
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="w-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
-                    loading="lazy"
+                    className="aspect-[9/16] w-full"
                   />
                 </div>
-              )}
-            </div>
-          </AnimatedSection>
-        ))}
+
+                {/* ✅ TROCA ALT POR DESCRIPTION */}
+                {item.description && (
+                  <div className="mt-3 px-1">
+                    <p className="text-sm text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                )}
+
+              </div>
+
+            </AnimatedSection>
+          ))}
+        </div>
       </div>
+
+      <Lightbox
+        images={lightboxItems}
+        initialIndex={lightboxIndex}
+        open={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </div>
-  </div>
-);
+  );
+};
 
 export default Gallery;

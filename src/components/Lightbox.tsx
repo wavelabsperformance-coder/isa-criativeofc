@@ -14,10 +14,14 @@ interface LightboxProps {
   initialIndex: number;
   open: boolean;
   onClose: () => void;
-  imageAspect?: string;
 }
 
-const Lightbox = ({ images, initialIndex, open, onClose, imageAspect = "aspect-[9/16]" }: LightboxProps) => {
+const Lightbox = ({
+  images,
+  initialIndex,
+  open,
+  onClose,
+}: LightboxProps) => {
   const [index, setIndex] = useState(initialIndex);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -36,25 +40,33 @@ const Lightbox = ({ images, initialIndex, open, onClose, imageAspect = "aspect-[
 
   useEffect(() => {
     if (!open) return;
+
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowLeft") goPrev();
       if (e.key === "ArrowRight") goNext();
     };
+
     window.addEventListener("keydown", handleKey);
     document.body.style.overflow = "hidden";
+
     return () => {
       window.removeEventListener("keydown", handleKey);
       document.body.style.overflow = "";
     };
   }, [open, onClose, goPrev, goNext]);
 
-  // Auto-play video when switching slides
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
+      videoRef.current.currentTime = 0;
+      videoRef.current.muted = false;
+
+      videoRef.current.play().catch(() => {
+        videoRef.current!.muted = true;
+        videoRef.current!.play().catch(() => {});
+      });
     }
-  }, [index]);
+  }, [index, open]);
 
   if (!open || images.length === 0) return null;
 
@@ -65,58 +77,70 @@ const Lightbox = ({ images, initialIndex, open, onClose, imageAspect = "aspect-[
     <AnimatePresence>
       {open && (
         <motion.div
+          className="fixed inset-0 z-[100] flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center"
-          onClick={onClose}
         >
-          <div className="absolute inset-0 bg-black/90" />
+          {/* OVERLAY */}
+          <div
+            className="absolute inset-0 bg-black/90"
+            onClick={onClose}
+          />
 
+          {/* CLOSE */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-10 p-2 text-white/70 hover:text-white transition-colors"
-            aria-label="Close"
+            className="absolute top-4 right-4 z-20 p-2 text-white/70 hover:text-white"
           >
             <X className="h-6 w-6" />
           </button>
 
-          <div className="absolute top-4 left-4 z-10 text-white/50 text-sm font-mono">
+          {/* COUNTER */}
+          <div className="absolute top-4 left-4 z-20 text-white/50 text-sm">
             {index + 1} / {images.length}
           </div>
 
+          {/* PREV */}
           <button
-            onClick={(e) => { e.stopPropagation(); goPrev(); }}
-            className="absolute left-2 md:left-6 z-10 p-2 text-white/50 hover:text-white transition-colors"
-            aria-label="Previous"
+            onClick={(e) => {
+              e.stopPropagation();
+              goPrev();
+            }}
+            className="absolute left-4 z-20 text-white/60 hover:text-white"
           >
             <ChevronLeft className="h-8 w-8" />
           </button>
 
+          {/* NEXT */}
           <button
-            onClick={(e) => { e.stopPropagation(); goNext(); }}
-            className="absolute right-2 md:right-6 z-10 p-2 text-white/50 hover:text-white transition-colors"
-            aria-label="Next"
+            onClick={(e) => {
+              e.stopPropagation();
+              goNext();
+            }}
+            className="absolute right-4 z-20 text-white/60 hover:text-white"
           >
             <ChevronRight className="h-8 w-8" />
           </button>
 
+          {/* CONTENT */}
           <motion.div
             key={index}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
             className="relative z-10 flex flex-col items-center"
             onClick={(e) => e.stopPropagation()}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
             onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
             onTouchEnd={(e) => {
               if (touchStart === null) return;
+
               const diff = e.changedTouches[0].clientX - touchStart;
-              if (Math.abs(diff) > 50) {
+
+              if (Math.abs(diff) > 40) {
                 diff > 0 ? goPrev() : goNext();
               }
+
               setTouchStart(null);
             }}
           >
@@ -125,22 +149,23 @@ const Lightbox = ({ images, initialIndex, open, onClose, imageAspect = "aspect-[
                 ref={videoRef}
                 src={current.video}
                 poster={current.src}
-                autoPlay
-                muted
-                loop
+                controls
                 playsInline
-                className="h-[80vh] aspect-[9/16] object-cover rounded-sm"
+                autoPlay
+                className="max-h-[80vh] max-w-[95vw] object-contain rounded-sm bg-black"
               />
             ) : (
               <img
                 src={current.src}
                 alt={current.alt}
-                className={`h-[80vh] ${imageAspect} object-cover rounded-sm`}
+                className="max-h-[80vh] max-w-[95vw] object-contain rounded-sm"
                 draggable={false}
               />
             )}
+
+            {/* DESCRIÇÃO SEMPRE EMBAIXO */}
             {current.description && (
-              <p className="mt-3 text-white/70 text-sm text-center max-w-lg">
+              <p className="mt-4 text-white/70 text-sm text-center max-w-xl">
                 {current.description}
               </p>
             )}

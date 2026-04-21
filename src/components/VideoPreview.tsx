@@ -1,29 +1,31 @@
-import { useRef, useState } from "react";
+import { useRef, useEffect } from "react";
 
 interface VideoPreviewProps {
-  thumbnail: string;
   video?: string;
+  poster: string; // 👈 AGORA OBRIGATÓRIO
   alt: string;
   className?: string;
 }
 
-const VideoPreview = ({ thumbnail, video, alt, className = "" }: VideoPreviewProps) => {
+const VideoPreview = ({ video, poster, alt, className = "" }: VideoPreviewProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0.1;
+    }
+  }, []);
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
-    if (videoRef.current && video) {
-      videoRef.current.play().catch(() => {});
-    }
+    if (!videoRef.current) return;
+    videoRef.current.play().catch(() => {});
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
+    if (!videoRef.current) return;
+
+    videoRef.current.pause();
+    videoRef.current.currentTime = 0.1;
   };
 
   return (
@@ -32,25 +34,16 @@ const VideoPreview = ({ thumbnail, video, alt, className = "" }: VideoPreviewPro
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <img
-        src={thumbnail}
-        alt={alt}
-        className={`h-full w-full object-cover transition-all duration-500 ${
-          isHovered ? "scale-105 opacity-0" : "scale-100 opacity-100"
-        }`}
-        loading="lazy"
-      />
       {video && (
         <video
           ref={videoRef}
           src={video}
+          poster={poster} // 👈 ESSENCIAL PRA IMAGEM PARADA
           muted
           loop
           playsInline
-          preload="none"
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${
-            isHovered ? "opacity-100" : "opacity-0"
-          }`}
+          preload="metadata" // 👈 melhor performance
+          className="w-full h-full object-cover"
         />
       )}
     </div>

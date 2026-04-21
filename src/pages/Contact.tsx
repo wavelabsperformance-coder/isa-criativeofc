@@ -2,8 +2,8 @@ import { MessageCircle, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
 
-const WHATSAPP_URL = "https://wa.me/?text=Hello%2C%20I%27d%20like%20to%20start%20a%20project.";
-const LINKEDIN_URL = "https://www.linkedin.com/in/isabelle-carvalho/";
+const WHATSAPP_URL = "https://wa.me/5582998274831";
+const LINKEDIN_URL = "https://www.linkedin.com/in/isabellefe1452?utm_source=share_via&utm_content=profile&utm_medium=member_ios";
 
 const Contact = () => (
   <div className="relative z-10 flex min-h-screen items-center pt-20">
@@ -33,7 +33,8 @@ const Contact = () => (
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="gap-2 border-foreground text-foreground hover:bg-foreground hover:text-background">
-              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+              <a href=" https://www.linkedin.com/in/isabellefe1452?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+            target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-5 w-5" /> Connect on LinkedIn
               </a>
             </Button>

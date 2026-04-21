@@ -37,7 +37,7 @@ const Footer = () => (
         <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} ISA Creative Edits & Animation. All rights reserved.</p>
         <div className="flex items-center gap-4">
           <a
-            href="https://www.instagram.com/isabelle_carvalhoo/"
+            href="https:https://www.instagram.com/isa.editora_/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"

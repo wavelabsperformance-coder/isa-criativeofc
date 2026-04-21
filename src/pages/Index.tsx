@@ -9,7 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { projects } from "@/data/projects";
 import { brands } from "@/data/brands";
 
-const WHATSAPP_URL = "https://wa.me/?text=Hello%2C%20I%27d%20like%20to%20start%20a%20project.";
+const WHATSAPP_URL = "https://wa.me/5582998274831";
 const LINKEDIN_URL = "https://www.linkedin.com/in/isabelle-carvalho/";
 
 const softwareTools = [
@@ -17,9 +17,7 @@ const softwareTools = [
   { name: "Premiere Pro", logo: "/images/software/premiere.jpg", desc: "Video Editing" },
   { name: "Photoshop", logo: "/images/software/photoshop.jpg", desc: "Image Editing" },
   { name: "Illustrator", logo: "/images/software/illustrator.jpg", desc: "Vector Design" },
-  { name: "Cinema 4D", logo: "/images/software/cinema4d.jpg", desc: "3D Modeling" },
-  { name: "Blender", logo: "/images/software/blender.jpg", desc: "3D & Animation" },
-  { name: "DaVinci Resolve", logo: "/images/software/davinci.jpg", desc: "Color Grading" },
+
 ];
 
 const faqItems = [
