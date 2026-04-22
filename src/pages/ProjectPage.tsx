@@ -45,25 +45,27 @@ const ProjectPage = () => {
         <AnimatedSection>
           <Link
             to="/portfolio"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Portfolio
           </Link>
 
-          <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-            {project.category}
-          </p>
-
-          <h1 className="font-display text-4xl font-bold md:text-5xl mb-4">
+          {/* 🔥 TÍTULO PREMIUM */}
+          <h1 className="
+            font-display 
+            text-5xl 
+            md:text-6xl 
+            lg:text-7xl 
+            font-semibold 
+            tracking-tight 
+            leading-[1.05] 
+            mb-12
+          ">
             {project.title}
           </h1>
 
-          <p className="text-muted-foreground max-w-2xl mb-8">
-            {project.description}
-          </p>
-
-          <Button asChild className="gap-2 mb-16">
+          <Button asChild className="gap-2 mb-20">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="h-4 w-4" />
               Start a Similar Project
@@ -80,7 +82,7 @@ const ProjectPage = () => {
                 
                 {/* VIDEO / IMAGE */}
                 <div
-                  className="overflow-hidden rounded-sm bg-secondary cursor-pointer"
+                  className="overflow-hidden rounded-sm bg-secondary cursor-pointer group"
                   onClick={() => {
                     setLightboxIndex(i);
                     setLightboxOpen(true);
@@ -91,19 +93,19 @@ const ProjectPage = () => {
                       video={item.video}
                       poster={item.src}
                       alt={item.alt}
-                      className="aspect-[9/16] w-full"
+                      className="aspect-[9/16] w-full transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   ) : (
                     <img
                       src={item.src}
                       alt={item.alt}
-                      className="aspect-[9/16] w-full object-cover"
+                      className="aspect-[9/16] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                       loading="lazy"
                     />
                   )}
                 </div>
 
-                {/* 🔥 DESCRIÇÃO ABAIXO DO VÍDEO */}
+                {/* DESCRIÇÃO DO VÍDEO (mantida) */}
                 {item.description && (
                   <div className="mt-3 px-1">
                     <p className="text-sm text-muted-foreground">
