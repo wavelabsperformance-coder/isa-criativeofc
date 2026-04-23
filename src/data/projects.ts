@@ -85,7 +85,7 @@ export const projects: Project[] = [
       { type: "video", video: getVideoUrl("video-03_mz49ip"), alt: "Sponsors 3", description: "MAGIC MIND" },
       { type: "video", video: getVideoUrl("video-04_i3vzlm"), alt: "Sponsors 4", description: "CENTINELA TEQUILA" },
       { type: "video", video: getVideoUrl("video-05_hpsgq1"), alt: "Sponsors 5", description: "CAROLINE NAVA PROMO" },
-      { type: "video", video: getVideoUrl("svideo-06_k0cqdh"), alt: "Sponsors 6", description: "AFTER MOVIE - ALTINHA" },
+      { type: "video", video: getVideoUrl("video-06_k0cqdh"), alt: "Sponsors 6", description: "AFTER MOVIE - ALTINHA" },
     ]
   },
 
