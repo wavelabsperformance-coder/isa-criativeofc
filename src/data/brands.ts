@@ -112,7 +112,7 @@ export const brands: Brand[] = [
   {
     id: "sonozz",
     name: "Sonozz",
-    logo: "/images/brands/sonozz-logo.png",
+    logo: "/images/brands/sonozz-logo.webp",
     images: [
       { src: "/images/brands/sonozz-01.jpg", alt: "Sonozz visual 1" },
       { src: "/images/brands/sonozz-02.jpg", alt: "Sonozz visual 2" },
