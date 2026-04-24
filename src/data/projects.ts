@@ -55,6 +55,29 @@ export const projects: Project[] = [
     ]
   },
 
+
+  {
+    id: "Social Media",
+    title: "Social Media",
+    description: "Social Media",
+    video: getVideoUrl("video-01_yk03me"),
+    thumbnail: "",
+    category: "Projetos",
+
+    gallery: [
+      { type: "video", video: getVideoUrl("video-01_yk03me"), alt: "Criative 1", description: "THE CARTER COLLECTIVE" },
+      { type: "video", video: getVideoUrl("video-02_kgni7e"), alt: "Criative 2", description: "NUTRITION CHALLENGE" },
+      { type: "video", video: getVideoUrl("video-03_kmwbb9"), alt: "Criative 3", description: "PAMPERS - EASTER" },
+      { type: "video", video: getVideoUrl("video-04_axsjwi"), alt: "Criative 4", description: "VICK - THE COLD WEATHER" },
+      { type: "video", video: getVideoUrl("video-05_ckztgg"), alt: "Criative 5", description: "VICK - VAPORUB IN THE COLD" },
+      { type: "video", video: getVideoUrl("video-06_iuasmf"), alt: "Criative 6", description: "Cebion" },
+      { type: "video", video: getVideoUrl("video-07_dkfwrx"), alt: "Criative 7", description: "ALWAYS" },
+      { type: "video", video: getVideoUrl("video-08_qmbns6"), alt: "Criative 8", description: "ALWAYS" },
+      { type: "video", video: getVideoUrl("video-09_gcigdt"), alt: "Criative 9", description: "ALWAYS" },
+      { type: "video", video: getVideoUrl("video-10_tomzd3"), alt: "Criative 10", description: "ALWAYS" },
+    ]
+  }, 
+
   {
     id: "wedding",
     title: "Wedding",
@@ -81,7 +104,7 @@ export const projects: Project[] = [
 
     gallery: [
       { type: "video", video: getVideoUrl("video-01_xsgpld"), alt: "Sponsors 1", description: "WPB 123 W/ STRYDE RUN CLUB" },
-      { type: "video", video: getVideoUrl("video-02_wewyym"), alt: "Sponsors 2", description: "Produto em destaque" },
+      { type: "video", video: getVideoUrl("video-02_wewyym"), alt: "Sponsors 2", description: "R+CO" },
       { type: "video", video: getVideoUrl("video-03_mz49ip"), alt: "Sponsors 3", description: "MAGIC MIND" },
       { type: "video", video: getVideoUrl("video-04_i3vzlm"), alt: "Sponsors 4", description: "CENTINELA TEQUILA" },
       { type: "video", video: getVideoUrl("video-05_hpsgq1"), alt: "Sponsors 5", description: "CAROLINE NAVA PROMO" },
@@ -101,6 +124,21 @@ export const projects: Project[] = [
       { type: "video", video: getVideoUrl("video-01_c2slg2"), alt: "Food 1", description: "AKIRA BACK BRUNCH SHOOT 2024 - PART 1" },
       { type: "video", video: getVideoUrl("video-02_x0ei7t"), alt: "Food 2", description: "AKIRA BACK BRUNCH SHOOT 2024 - PART 2" },
       { type: "video", video: getVideoUrl("video-03_si6tof"), alt: "Food 3", description: "BRICKHOUSE DROP" },
+    ]
+  },
+
+  
+  {
+    id: "travel",
+    title: "Travel",
+    description: "Travel videos",
+    video: getVideoUrl("video-02_gxojf1"),
+    thumbnail: "",
+    category: "Projetos",
+
+    gallery: [
+      { type: "video", video: getVideoUrl("video-01_eb9qcsel1"), alt: "Travel 1", description: "SPAIN TRIP SUMMER 2023" },
+      { type: "video", video: getVideoUrl("video-02_gxojf1"), alt: "Travel 2", description: "DAY OFF" },
     ]
   },
 
@@ -135,39 +173,5 @@ export const projects: Project[] = [
     ]
   },
 
-  {
-    id: "Social Media",
-    title: "Social Media",
-    description: "Social Media",
-    video: getVideoUrl("video-01_yk03me"),
-    thumbnail: "",
-    category: "Projetos",
 
-    gallery: [
-      { type: "video", video: getVideoUrl("video-01_yk03me"), alt: "Criative 1", description: "THE CARTER COLLECTIVE" },
-      { type: "video", video: getVideoUrl("video-02_kgni7e"), alt: "Criative 2", description: "NUTRITION CHALLENGE" },
-      { type: "video", video: getVideoUrl("video-03_kmwbb9"), alt: "Criative 3", description: "PAMPERS - EASTER" },
-      { type: "video", video: getVideoUrl("video-04_axsjwi"), alt: "Criative 4", description: "VICK - THE COLD WEATHER" },
-      { type: "video", video: getVideoUrl("video-05_ckztgg"), alt: "Criative 5", description: "VICK - VAPORUB IN THE COLD" },
-      { type: "video", video: getVideoUrl("video-06_iuasmf"), alt: "Criative 6", description: "Cebion" },
-      { type: "video", video: getVideoUrl("video-07_dkfwrx"), alt: "Criative 7", description: "ALWAYS" },
-      { type: "video", video: getVideoUrl("video-08_qmbns6"), alt: "Criative 8", description: "ALWAYS" },
-      { type: "video", video: getVideoUrl("video-09_gcigdt"), alt: "Criative 9", description: "ALWAYS" },
-      { type: "video", video: getVideoUrl("video-10_tomzd3"), alt: "Criative 10", description: "ALWAYS" },
-    ]
-  }, 
-
-  {
-    id: "travel",
-    title: "Travel",
-    description: "Travel videos",
-    video: getVideoUrl("video-02_gxojf1"),
-    thumbnail: "",
-    category: "Projetos",
-
-    gallery: [
-      { type: "video", video: getVideoUrl("video-01_eb9qcsel1"), alt: "Travel 1", description: "SPAIN TRIP SUMMER 2023" },
-      { type: "video", video: getVideoUrl("video-02_gxojf1"), alt: "Travel 2", description: "DAY OFF" },
-    ]
-  },
 ];

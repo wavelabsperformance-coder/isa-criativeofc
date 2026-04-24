@@ -8,7 +8,7 @@ import VideoPreview from "@/components/VideoPreview";
 import { projects } from "@/data/projects";
 
 const WHATSAPP_URL =
-  "https://wa.me/?text=Hello%2C%20I%27d%20like%20to%20start%20a%20project.";
+  "https://wa.me/5582998274831";
 
 const ProjectPage = () => {
   const { id } = useParams();
