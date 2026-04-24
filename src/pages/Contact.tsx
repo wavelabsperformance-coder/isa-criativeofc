@@ -28,7 +28,7 @@ const Contact = () => (
               </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="gap-2">
-              <a href="https://www.instagram.com/isabelle_carvalhoo/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/isa.editora_/" target="_blank" rel="noopener noreferrer">
                 <Instagram className="h-5 w-5" /> View on Instagram
               </a>
             </Button>
