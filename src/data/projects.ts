@@ -57,25 +57,98 @@ export const projects: Project[] = [
 
 
   {
-    id: "Social Media",
-    title: "Social Media",
-    description: "Social Media",
-    video: getVideoUrl("video-01_yk03me"),
-    thumbnail: "",
-    category: "Projetos",
+  id: "Social Media",
+  title: "Social Media",
+  description: "Social Media",
+  video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/Shisospicy%20Hype%20Reel%20Voiceover.mp4",
+  thumbnail: "",
+  category: "Projetos",
 
-    gallery: [
-      { type: "video", video: getVideoUrl("video-01_yk03me"), alt: "Criative 1", description: "THE CARTER COLLECTIVE" },
-      { type: "video", video: getVideoUrl("video-02_kgni7e"), alt: "Criative 2", description: "NUTRITION CHALLENGE" },
-      { type: "video", video: getVideoUrl("video-03_kmwbb9"), alt: "Criative 3", description: "PAMPERS - EASTER" },
-      { type: "video", video: getVideoUrl("video-04_axsjwi"), alt: "Criative 4", description: "VICK - THE COLD WEATHER" },
-      { type: "video", video: getVideoUrl("video-05_ckztgg"), alt: "Criative 5", description: "VICK - VAPORUB IN THE COLD" },
-      { type: "video", video: getVideoUrl("video-06_iuasmf"), alt: "Criative 6", description: "Cebion" },
-      { type: "video", video: getVideoUrl("video-07_dkfwrx"), alt: "Criative 7", description: "ALWAYS" },
-      { type: "video", video: getVideoUrl("video-08_qmbns6"), alt: "Criative 8", description: "ALWAYS" },
-      { type: "video", video: getVideoUrl("video-09_gcigdt"), alt: "Criative 9", description: "ALWAYS" },
-      { type: "video", video: getVideoUrl("video-10_tomzd3"), alt: "Criative 10", description: "ALWAYS" },
-    ]
+  gallery: [
+    {
+      type: "video",
+      video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/The%20Carter%20Collective.mp4",
+      alt: "Criative 1",
+      description: "THE CARTER COLLECTIVE"
+    },
+
+    {
+      type: "video",
+      video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/video-02_kgni7e.webm",
+      alt: "Criative 2",
+      description: "NUTRITION CHALLENGE"
+    },
+
+    {
+      type: "video",
+      video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/143_e_se_o_coelhinho_trouxesse.mp4",
+      alt: "Criative 3",
+      description: "PAMPERS - EASTER"
+    },
+
+    {
+      type: "video",
+      video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/50_Os%20sintomas%20da%20gripe%20chegaram%20com%20o%20frio_v2.mp4",
+      alt: "Criative 4",
+      description: "VICK - THE COLD WEATHER"
+    },
+
+    {
+      type: "video",
+      video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/51_vaporub_no_frio.mp4",
+      alt: "Criative 5",
+      description: "VICK - VAPORUB IN THE COLD"
+    },
+
+    {
+      type: "video",
+      video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/02_cebion%20pra%20levar.mp4",
+      alt: "Criative 6",
+      description: "Cebion"
+    },
+
+    {
+      type: "video",
+      video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/91_raio_x_necessaire.mp4",
+      alt: "Criative 7",
+      description: "ALWAYS"
+    },
+
+    {
+      type: "video",
+      video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/19_maquina_pegar_bichinhos.mp4",
+      alt: "Criative 8",
+      description: "ALWAYS"
+    },
+
+    {
+      type: "video",
+      video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/21_Que_look_posso_usar_sem_marcar%20_.mp4",
+      alt: "Criative 9",
+      description: "ALWAYS"
+    },
+
+    {
+      type: "video",
+      video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/escolhendo%20meu%20always%20.mp4",
+      alt: "Criative 10",
+      description: "ALWAYS"
+    },
+  // 🔥 TESTE CLOUDFLARE
+  {
+    type: "video",
+    video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/Shisospicy%20Hype%20Reel%20Voiceover.mp4",
+    alt: "Criative 11",
+    description: "SHISOSPICY HYPE REEL VOICEOVER"
+  },
+
+   {
+    type: "video",
+    video: "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/Teste%20Vitor%20Jaci.mp4",
+    alt: "Criative 11",
+    description: "VITOR JACI"
+  },
+]
   }, 
 
   {
