@@ -3,10 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface LightboxItem {
-  src: string;
+  src?: string;
   alt: string;
   description?: string;
   video?: string;
+  type?: "image" | "video";
 }
 
 interface LightboxProps {
@@ -71,7 +72,8 @@ const Lightbox = ({
   if (!open || images.length === 0) return null;
 
   const current = images[index];
-  const isVideo = !!current.video;
+  const isVideo =
+    current.type === "video" || !!current.video;
 
   return (
     <AnimatePresence>
@@ -135,7 +137,8 @@ const Lightbox = ({
             onTouchEnd={(e) => {
               if (touchStart === null) return;
 
-              const diff = e.changedTouches[0].clientX - touchStart;
+              const diff =
+                e.changedTouches[0].clientX - touchStart;
 
               if (Math.abs(diff) > 40) {
                 diff > 0 ? goPrev() : goNext();
@@ -152,6 +155,7 @@ const Lightbox = ({
                 controls
                 playsInline
                 autoPlay
+                loop
                 className="max-h-[80vh] max-w-[95vw] object-contain rounded-sm bg-black"
               />
             ) : (
@@ -163,7 +167,7 @@ const Lightbox = ({
               />
             )}
 
-            {/* DESCRIÇÃO SEMPRE EMBAIXO */}
+            {/* DESCRIPTION */}
             {current.description && (
               <p className="mt-4 text-white/70 text-sm text-center max-w-xl">
                 {current.description}

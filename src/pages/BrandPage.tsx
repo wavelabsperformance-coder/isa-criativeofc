@@ -20,6 +20,7 @@ const BrandPage = () => {
           <h1 className="font-display text-3xl font-bold mb-4">
             Brand not found
           </h1>
+
           <Button asChild variant="outline">
             <Link to="/brands">Back to Brands</Link>
           </Button>
@@ -56,7 +57,7 @@ const BrandPage = () => {
           </div>
         </AnimatedSection>
 
-        {/* 🔥 GRID (ESQUERDA → DIREITA) */}
+        {/* GRID */}
         <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {brand.images.map((item, i) => (
             <AnimatedSection key={i} delay={i * 0.05}>
@@ -67,12 +68,26 @@ const BrandPage = () => {
                   setLightboxOpen(true);
                 }}
               >
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="w-full h-auto object-contain rounded-sm transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
+
+                {item.type === "video" ? (
+                  <video
+                    src={item.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-auto object-contain rounded-sm transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="w-full h-auto object-contain rounded-sm transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                )}
+
               </div>
             </AnimatedSection>
           ))}
