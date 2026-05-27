@@ -6,39 +6,132 @@ export interface GalleryItem {
   description?: string;
 }
 
-// 🔥 MESMA FUNÇÃO DOS PROJECTS
-const getVideoUrl = (id: string) =>
-  `https://res.cloudinary.com/dyk5dikcw/video/upload/f_auto,q_auto/${id}.mp4`;
-
 export const galleryItems: GalleryItem[] = [
   // CLUB
-  { id: "g1", video: getVideoUrl("video-01_bqxoye"), alt: "Video 1", description: "ARNIE - SPRINGBREAK" },
-  { id: "g2", video: getVideoUrl("video-05_l8q4lm"), alt: "Video 5", description: "DAER W/ NIC LOVE ISLAND HOST PARTY" },
-  { id: "g3", video: getVideoUrl("video-10_h4h9em"), alt: "Video 10", description: "ZMM EVENTS COLLEGE TOUR 2025" },
-  { id: "g15", video: getVideoUrl("video-15_n1mqrn"), alt: "Video 15", description: "SIGMA CHI FSU NOIZU 2024" },
+  {
+    id: "g1",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Club/video-01_bqxoye.webm",
+    alt: "Video 1",
+    description: "ARNIE - SPRINGBREAK",
+  },
+
+  {
+    id: "g2",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Club/video-05_l8q4lm.webm",
+    alt: "Video 5",
+    description: "DAER W/ NIC LOVE ISLAND HOST PARTY",
+  },
+
+  {
+    id: "g3",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Club/video-10_h4h9em.webm",
+    alt: "Video 10",
+    description: "ZMM EVENTS COLLEGE TOUR 2025",
+  },
+
+  {
+    id: "g15",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Club/video-15_n1mqrn.webm",
+    alt: "Video 15",
+    description: "SIGMA CHI FSU NOIZU 2024",
+  },
 
   // WEDDING
-  { id: "g4", video: getVideoUrl("video-01_uwpxcf"), alt: "Wedding 1", description: "OPULENCE WEDDING FOUR SEASONS" },
-  { id: "g5", video: getVideoUrl("video-03_ge4kqv"), alt: "Wedding 3", description: "CERIMÔNIA GABRIEL E GABRIELA" },
+  {
+    id: "g4",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Wedding/video-01_uwpxcf.webm",
+    alt: "Wedding 1",
+    description: "OPULENCE WEDDING FOUR SEASONS",
+  },
+
+  {
+    id: "g5",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Wedding/video-03_ge4kqv.webm",
+    alt: "Wedding 3",
+    description: "CERIMÔNIA GABRIEL E GABRIELA",
+  },
 
   // SPONSORS
-  { id: "g6", video: getVideoUrl("video-01_xsgpld"), alt: "Sponsors 1", description: "WPB 123 W/ STRYDE RUN CLUB" },
-  { id: "g7", video: getVideoUrl("video-03_mz49ip"), alt: "Sponsors 3", description: "MAGIC MIND" },
+  {
+    id: "g6",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Sponsors/video-01_xsgpld.webm",
+    alt: "Sponsors 1",
+    description: "WPB 123 W/ STRYDE RUN CLUB",
+  },
+
+  {
+    id: "g7",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Sponsors/video-03_mz49ip.webm",
+    alt: "Sponsors 3",
+    description: "MAGIC MIND",
+  },
 
   // FOOD
-  { id: "g8", video: getVideoUrl("video-01_c2slg2"), alt: "Food 1", description: "AKIRA BACK BRUNCH SHOOT 2024 - PART 1" },
+  {
+    id: "g8",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Food/video-01_c2slg2.webm",
+    alt: "Food 1",
+    description: "AKIRA BACK BRUNCH SHOOT 2024 - PART 1",
+  },
 
   // MOTION
-  { id: "g9", video: getVideoUrl("video-01_wal75u"), alt: "Motion 1", description: "MOTION VOL1" },
+  {
+    id: "g9",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Motion/video-01_wal75u.webm",
+    alt: "Motion 1",
+    description: "MOTION VOL1",
+  },
 
   // VFX
-  { id: "g10", video: getVideoUrl("video-02_mwiufh"), alt: "VFX 2", description: "VFX VOL2" },
+  {
+    id: "g10",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/VFX/video-02_mwiufh.webm",
+    alt: "VFX 2",
+    description: "VFX VOL2",
+  },
 
-  // SOCIAL / CREATIVE
-  { id: "g11", video: getVideoUrl("video-01_yk03me"), alt: "Criative 1", description: "THE CARTER COLLECTIVE" },
-  { id: "g12", video: getVideoUrl("video-05_ckztgg"), alt: "Criative 5", description: "VICK - VAPORUB IN THE COLD" },
-  { id: "g13", video: getVideoUrl("video-07_dkfwrx"), alt: "Criative 8", description: "ALWAYS" },
+  // SOCIAL
+  {
+    id: "g11",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/The%20Carter%20Collective.mp4",
+    alt: "Criative 1",
+    description: "THE CARTER COLLECTIVE",
+  },
+
+  {
+    id: "g12",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/51_vaporub_no_frio.mp4",
+    alt: "Criative 5",
+    description: "VICK - VAPORUB IN THE COLD",
+  },
+
+  {
+    id: "g13",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Social%20Media/19_maquina_pegar_bichinhos.mp4",
+    alt: "Criative 8",
+    description: "ALWAYS",
+  },
 
   // TRAVEL
-  { id: "g14", video: getVideoUrl("video-01_eb9qcsel1"), alt: "Travel 1", description: "SPAIN TRIP SUMMER 2023" },
+  {
+    id: "g14",
+    video:
+      "https://pub-4ef6c47fc71b4277837d1ec9db4eb871.r2.dev/Travel/Spain%20Trip%20Summer%20202309.mp4",
+    alt: "Travel 1",
+    description: "SPAIN TRIP SUMMER 2023",
+  },
 ];
