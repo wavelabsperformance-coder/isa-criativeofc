@@ -29,7 +29,7 @@ const Index = () => (
           className="h-full w-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-background/10" />
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
